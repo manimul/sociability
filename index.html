@@ -41,7 +41,7 @@
           </ul>
         </div>
       </nav></header>
-    <main class="grid md:justify-center  md:align-middle  md:gap-12 md:grid-cols-2 md:min-h-screen bg-white z-0">
+    <main class="grid md:justify-center  md:align-middle  md:gap-12 md:grid-cols-2 md:min-h-screen bg-gray-50 z-0">
       <div class="p-4 md:pl-8 order-2 md:order-1 lg:pl-12 xl:pl-20  self-center flex flex-col md:mt-24 space-y-5   ">
         <h1 class="text-2xl  font-medium"></h1>
         <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#15081a] ">Helping you future-proof your business and build better futures for everyone
@@ -70,5 +70,29 @@
       </div>
       <img src="./images/eb-4.jpg" class= "order-1 md:order-2 ml-auto object-cover w-full md:h-screen overflow-hidden "></img>
     </main>
+   <section class="bg-white p-4 md:p-20 col-span-2 order-3 h-screen">
+    <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-[#15081a] ">Some of our clients include:</h3>
+
+    <div id="imageGrid" class="grid grid-cols-5 gap-8"></div>
+
+   </section>
+   
   </body>
+  <script>
+    const imageGrid = document.getElementById('imageGrid');
+  
+    function displayImages() {
+      for (let i = 1; i <= 49; i++) {
+        const imagePath = `./images/clients/${i}.png`;
+        const imgElement = document.createElement('img');
+        imgElement.src = imagePath;
+        imgElement.alt = `Client Image ${i}`;
+        imgElement.classList.add('w-full', 'h-auto'); // Adjust these classes as needed for styling
+        imageGrid.appendChild(imgElement);
+      }
+    }
+  
+    displayImages();
+  </script>
+  
 </html>
